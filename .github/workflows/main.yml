@@ -43,7 +43,7 @@ jobs:
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5 # GitHub Action version
       with:
         params: 
-          # --cx-project = KB_CxFlow_GHA_SCAResolver
+           --cx-project = "KB_CxFlow_GHA_SCAResolver"
            --enable-sca-resolver=true
            -s ='${{ github.workspace }}'
            -n = '${{ github.repository }}'
