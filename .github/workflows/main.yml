@@ -30,12 +30,10 @@ jobs:
     - name: Set SCA Resolver Enviroment
       run: "wget https://sca-downloads.s3.amazonaws.com/cli/1.10.4/ScaResolver-linux64.tar.gz && tar -xzvf ScaResolver-linux64.tar.gz && rm -rf ScaResolver-linux64.tar.gz"
       
-    - name: Set Scala Packges
-      run: "sudo rm -f /etc/yum.repos.d/bintray-rpm.repo || true && curl -L https://www.scala-sbt.org/sbt-rpm.repo > sbt-rpm.repo && sudo mv sbt-rpm.repo /etc/yum.repos.d/ && sudo yum install sbt"
     - name: Validate Scala
       run: "sbt --script-version"
       
-      - name: Download all workflow run artifacts
+    - name: Download all workflow run artifacts
       uses: actions/download-artifact@v3
         
     - name: Compile SCALA Project
