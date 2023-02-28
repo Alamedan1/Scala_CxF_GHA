@@ -46,11 +46,11 @@ jobs:
          project: KB_CxFLOW_GHA_Resolver
          params: 
              --enable-sca-resolver=true
-             -s ='${{ github.workspace }}'
-             -n = '${{ github.repository }}'
-             -a = '${{ secrets.SCA_TENANT }}'
-             -u = '${{ secrets.SCA_USERNAME }}'
-             -p = '${{ secrets.SCA_PASSWORD }}'
+             --s ='${{ github.workspace }}'
+             --n = '${{ github.repository }}'
+             --a = '${{ secrets.SCA_TENANT }}'
+             --u = '${{ secrets.SCA_USERNAME }}'
+             --p = '${{ secrets.SCA_PASSWORD }}'
               
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v3
