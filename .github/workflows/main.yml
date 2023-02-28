@@ -32,7 +32,6 @@ jobs:
       
     - name: Set Scala Packges
       run: "# remove old Bintray repo file && sudo rm -f /etc/yum.repos.d/bintray-rpm.repo || true && curl -L https://www.scala-sbt.org/sbt-rpm.repo > sbt-rpm.repo && sudo mv sbt-rpm.repo /etc/yum.repos.d/ && sudo yum install sbt"
-      
     - name: Validate Scala
       run: "sbt --script-version"
       
@@ -57,4 +56,3 @@ jobs:
       uses: actions/download-artifact@v3
       with:
           name: '${{ github.workspace }}/reports/'
-      
