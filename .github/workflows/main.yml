@@ -42,6 +42,7 @@ jobs:
     - name: Checkmarx CxFlow Action
       uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5 # GitHub Action version
       with:
+         scanners: sca
          project: KB_CxFLOW_GHA_Resolver
          params: 
              --enable-sca-resolver=true
@@ -49,7 +50,7 @@ jobs:
              -n = '${{ github.repository }}'
              -a = '${{ secrets.SCA_TENANT }}'
              -u = '${{ secrets.SCA_USERNAME }}'
-             -p '${{ secrets.SCA_PASSWORD }}'
+             -p = '${{ secrets.SCA_PASSWORD }}'
               
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v3
