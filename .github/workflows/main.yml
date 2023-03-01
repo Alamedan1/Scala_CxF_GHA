@@ -57,7 +57,7 @@ jobs:
       #For the Github variables, refer to https://docs.github.com/en/actions/learn-github-actions/environment-variables
       
     - name: SCA Resolver              
-      run: "./ScaResolver -s '${{ github.workspace }}' -n ' ${{ github.repository }}' -a ${{ secrets.SCA_TENANT }} -u ${{ secrets.SCA_USER }} -p '${{ secrets.SCA_USER_PASSWORD }}' --severity-threshold 'None' --report-extension Pdf,Json,Csv --report-type Risk" 
+      run: "./ScaResolver -s '${{ github.workspace }}' -n ' ${{ github.repository }}' -a ${{ secrets.SCA_TENANT }} -u ${{ secrets.SCA_USERNAME }} -p '${{ secrets.SCA_PASSWORD}}' --severity-threshold 'None' --report-extension Pdf,Json,Csv --report-type Risk" 
       
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v3
